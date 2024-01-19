@@ -1,10 +1,11 @@
-  import React, { useState } from 'react';
-
+  
+  import React from 'react';
   import './style.css';
   import logo from './images/logo.png';
+  import {Link} from 'react-router-dom';
 
   
-  function Sidebar() {
+  const Sidebar = () => {
 
     return (
       <div className='bg-white sidebar p-2' >
@@ -20,17 +21,18 @@
         <hr className='text-dark' />
 
       
-        <div className='list-group list-group-flush'>
-          <div to="/dashboard" className='list-group-item py-2'>
+        <nav className='list-group list-group-flush'>
+          
+          <Link to ="/" className='list-group-item py-2'>
             <i className='bi bi-speedometer2 fs-5 me-3'></i>
             <span className='fs-5'>Instructor Dashboard</span>
-          </div> 
+          </Link> 
 
           
-            <a className='list-group-item list-group-item-action my-2'>
+            <Link to ="/list" className='list-group-item list-group-item-action my-2'>
               <i className='bi bi-table fs- me-3'></i>
               <span className='fs-5'>Video list</span>
-            </a>
+            </Link>
           
 
           
@@ -44,7 +46,7 @@
               <span className='fs-5'>Logout</span>
             </a>
           
-        </div>
+        </nav>
 
       
           </div>
